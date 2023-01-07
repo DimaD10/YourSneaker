@@ -7,18 +7,23 @@
 }
 
 .wrapper {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    flex: 1 1 auto;
+    flex: 1 1 100%;
+    padding-top: 80px;
 }
 
 body {
     font-family: Montserrat;
     font-size: 20px;
+}
+.footer {
+    margin-top: auto;
 }

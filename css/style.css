@@ -200,8 +200,8 @@ body {
         -ms-flex-align: start;
             align-items: flex-start;
     background-color: rgba(255, 255, 255, 0.547);
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
     padding: 20px;
     padding-top: 80px;
     overflow-y: auto;
@@ -347,7 +347,7 @@ body {
   -webkit-transition: background-color ease-in-out 0.2s;
   transition: background-color ease-in-out 0.2s;
   display: none;
-  z-index: 110;
+  z-index: 111;
 }
 @media (min-width: 767.98px) {
   .search {
@@ -487,6 +487,71 @@ body {
   -webkit-transform: rotate(45deg) translate(5px, -10.5px);
           transform: rotate(45deg) translate(5px, -10.5px);
   width: 50%;
+}
+
+.footer {
+  background-color: #000;
+  padding: 50px 0;
+}
+@media (max-width: 1200px) {
+  .footer {
+    padding-top: calc(30px + 20 * (100vw - 320px) / 880);
+    padding-bottom: calc(30px + 20 * (100vw - 320px) / 880);
+  }
+}
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+}
+@media (max-width: 1200px) {
+  .footer-list {
+    gap: calc(10px + 40 * (100vw - 320px) / 880);
+  }
+}
+.footer-list__link {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  -webkit-transition: opacity ease-in-out 0.2s;
+  transition: opacity ease-in-out 0.2s;
+}
+.footer-list__link:hover {
+  opacity: 0.5;
+}
+@media (max-width: 1200px) {
+  .footer-list__link {
+    font-size: calc(14px + 4 * (100vw - 320px) / 880);
+  }
+}
+
+.footer-decor {
+  margin: 0 40px;
+}
+@media (max-width: 480px) {
+  .footer-decor {
+    display: none;
+  }
+}
+.footer-decor__img {
+  max-width: 100%;
 }
 
 .none {

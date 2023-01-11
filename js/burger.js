@@ -1,12 +1,14 @@
 const menuBurger = document.querySelector(".burger");
 const menu = document.querySelector(".categoryes");
 const items = document.querySelectorAll(".click");
-const body = document.querySelector('main');
+const body = document.querySelector('body');
+const decor = document.querySelector('.decor');
 
 menuBurger.addEventListener("click", () => {
     menuBurger.classList.toggle("active");
     menu.classList.toggle("menu-active");
     body.classList.toggle('hidden');
+    decor.classList.toggle("decor-show");
 });
 
 for (let index = 0; index < items.length; index++) {

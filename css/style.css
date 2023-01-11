@@ -356,7 +356,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-size: 32px;
-  letter-spacing: 10%;
   z-index: 110;
 }
 @media (max-width: 1200px) {
@@ -365,11 +364,21 @@ body {
   }
 }
 .logo a {
-  color: #A0A0A0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px;
 }
-.logo span {
-  color: #000;
-  font-weight: 700;
+@media (max-width: 767.98px) {
+  .logo a {
+    padding: 0 40px;
+  }
+}
+.logo img {
+  max-width: 100%;
 }
 
 .options {
@@ -515,6 +524,9 @@ body {
           justify-content: space-between;
   z-index: 110;
   width: 25px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25px;
+          flex: 0 0 25px;
   height: 18px;
   margin: auto 0;
   background-color: transparent;

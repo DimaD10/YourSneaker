@@ -780,11 +780,7 @@ body {
 }
 
 .new__image {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  z-index: -1;
+  width: 100%;
 }
 
 .top-decor-img {
@@ -798,9 +794,6 @@ body {
 }
 .new__box {
   background-color: #fff;
-}
-.new__window {
-  height: 100vh;
 }
 
 .card-list {
@@ -918,7 +911,16 @@ body {
   transition: color ease-in-out 0.2s;
   font-weight: 700;
   font-size: 40px;
-  line-height: 47px;
+  line-height: 120%;
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 1200px) {
+  .card__title {
+    font-size: calc(16px + 24 * (100vw - 320px) / 880);
+  }
 }
 .card__title:hover {
   color: #698de4;
@@ -929,7 +931,16 @@ body {
   font-weight: 400;
   line-height: 110%;
   letter-spacing: 0.01em;
-  color: #000000;
+}
+.card__price {
+  font-size: 20px;
+  margin-top: 30px;
+}
+@media (max-width: 1200px) {
+  .card__price {
+    margin-top: calc(12px + 18 * (100vw - 320px) / 880);
+    font-size: calc(14px + 6 * (100vw - 320px) / 880);
+  }
 }
 .card__button {
   display: -webkit-box;
@@ -1003,6 +1014,93 @@ body {
     max-width: 220%;
   }
 }
+.card_vertical {
+  width: auto;
+}
+.card_vertical:hover .card__product-image {
+  max-width: 100%;
+  -webkit-transform: rotate(-20deg) scale(1.5) translateX(-20px) translateY(20px);
+          transform: rotate(-20deg) scale(1.5) translateX(-20px) translateY(20px);
+}
+@media (max-width: 480px) {
+  .card_vertical:hover .card__product-image {
+    -webkit-transform: rotate(-20deg) scale(1.9) translateX(-10px);
+            transform: rotate(-20deg) scale(1.9) translateX(-10px);
+  }
+}
+.card_vertical .card__wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 580px;
+  padding: 0;
+  position: relative;
+}
+@media (max-width: 767.98px) {
+  .card_vertical .card__wrapper {
+    height: calc(336px + 244 * (100vw - 320px) / 447.98);
+  }
+}
+.card_vertical .card__brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 160px;
+  color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+@media (max-width: 1200px) {
+  .card_vertical .card__brand {
+    font-size: calc(80px + 80 * (100vw - 320px) / 880);
+  }
+}
+.card_vertical .card__article {
+  width: 100%;
+  padding: 30px 36px;
+  z-index: 10;
+}
+@media (max-width: 1200px) {
+  .card_vertical .card__article {
+    padding-top: calc(24px + 6 * (100vw - 320px) / 880);
+    padding-bottom: calc(24px + 6 * (100vw - 320px) / 880);
+    padding-left: calc(22px + 14 * (100vw - 320px) / 880);
+    padding-right: calc(22px + 14 * (100vw - 320px) / 880);
+  }
+}
+.card_vertical .card__product-box {
+  margin: 120px 0;
+  -webkit-transform: none;
+          transform: none;
+  z-index: 10;
+}
+@media (max-width: 480px) {
+  .card_vertical .card__product-box {
+    margin-top: calc(40px + 80 * (100vw - 320px) / 160);
+    margin-bottom: calc(0px + 120 * (100vw - 320px) / 160);
+  }
+}
+.card_vertical .card__product-image {
+  max-width: 100%;
+  -webkit-transform: rotate(-30deg) scale(1.5) translateX(-20px);
+          transform: rotate(-30deg) scale(1.5) translateX(-20px);
+}
+@media (max-width: 480px) {
+  .card_vertical .card__product-image {
+    -webkit-transform: rotate(-30deg) scale(1.7) translateX(-15px);
+            transform: rotate(-30deg) scale(1.7) translateX(-15px);
+  }
+}
+.card_vertical .card__button {
+  margin-left: auto;
+}
 
 .top {
   background-color: #fff;
@@ -1015,6 +1113,15 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
+  padding: 0 30px;
+  max-width: 1360px;
+}
+@media (max-width: 1360px) {
+  .top__container {
+    max-width: none;
+    padding: 0 15px;
+  }
 }
 .top__head {
   display: -webkit-box;
@@ -1050,20 +1157,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 50px;
 }
 .slider__head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 15px 0;
-  margin-top: 85px;
+  padding: 30px 0;
+  margin-top: 70px;
 }
 @media (max-width: 1200px) {
   .slider__head {
-    margin-top: calc(25px + 60 * (100vw - 320px) / 880);
+    margin-top: calc(25px + 45 * (100vw - 320px) / 880);
   }
 }
 .slider__title {
@@ -1076,6 +1187,63 @@ body {
     font-size: calc(16px + 24 * (100vw - 320px) / 880);
   }
 }
+.slider__arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+@media (max-width: 1200px) {
+  .slider__arrows {
+    gap: calc(10px + 15 * (100vw - 320px) / 880);
+  }
+}
+
+.swiper-arrow-prev, .swiper-arrow-next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #F5F5F5;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .swiper-arrow-prev, .swiper-arrow-next {
+    width: calc(25px + 30 * (100vw - 320px) / 880);
+    height: calc(25px + 30 * (100vw - 320px) / 880);
+  }
+}
+.swiper-arrow-prev::after, .swiper-arrow-next::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 42%;
+  height: 100%;
+  background: url("../img/icons/arrow-black.svg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.swiper-arrow-prev::after {
+  -webkit-transform: translate(-50%, -50%) rotate(180deg);
+          transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.swiper-button-disabled {
+  background-color: #C6C6C6;
+}
+
+@media (max-widht: 767.98px) {
+  .swiper-slide-prev, .swiper-slide-next {
+    pointer-events: none;
+  }
+}
+
 .main__message {
   background-color: #fff;
   padding: 100px 0;

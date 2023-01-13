@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YourSneaker</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./img/logo-page.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" data-scroll-container>
         <header class="header">
             <div class="header__container">
                 <div class="decor"></div>
@@ -224,6 +228,38 @@
                 </div>
             </section>
 
+            <section class="main__category category">
+                <div class="category__container">
+                    <h2 class="category__title">Buy by category</h2>
+                    <div class="category-slider">
+                        <div class="category-slide">
+                            <div class="category-slide__left">
+                                <a href="#" class="category-slide__title">WORKOUT</a>
+                            </div>
+                            <div class="category-slide__right">
+                                <img src="./img/categoryes/img1.png" alt="Workout">
+                            </div>
+                        </div>
+                        <div class="category-slide">
+                            <div class="category-slide__left">
+                                <a href="#" class="category-slide__title">RUN</a>
+                            </div>
+                            <div class="category-slide__right">
+                                <img src="./img/categoryes/img2.png" alt="RUN">
+                            </div>
+                        </div>
+                        <div class="category-slide">
+                            <div class="category-slide__left">
+                                <a href="#" class="category-slide__title">FOOTBALL</a>
+                            </div>
+                            <div class="category-slide__right">
+                                <img src="./img/categoryes/img3.png" alt="FOOTBALL">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="main__message message">
                 <div class="message__container">
                     <p class="message__message">
@@ -283,5 +319,12 @@
     <script src="./js/burger.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script>
+        const scroller = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
+        });
+    </script>
 </body>
 </html>

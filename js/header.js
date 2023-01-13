@@ -24,5 +24,7 @@ function checkScroll() {
         header.classList.remove('fixed');
         main.style.cssText = "padding-top: 0px;"
     }
+
+    console.log(scrollPos);
 }
 

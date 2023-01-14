@@ -27,4 +27,3 @@ function checkScroll() {
 
     console.log(scrollPos);
 }
-
